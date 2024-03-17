@@ -6,6 +6,7 @@ const GlobalIndex = ({ children }) => {
   const [search, setsearch] = useState("");
   const [recipeList, setRecipeList] = useState([]);
   const [loading, setloading] = useState(false);
+  const [recipeDetailsData,setrecipeDetailsData]=useState(null)
 
   async function handleSubmit(event) {
     event.preventDefault();
@@ -29,7 +30,16 @@ const GlobalIndex = ({ children }) => {
   }
   console.log(loading,recipeList);
   return (
-    <GlobalContext.Provider value={{ search, setsearch, handleSubmit,loading,recipeList }}>
+    <GlobalContext.Provider
+      value={{
+        search,
+        setsearch,
+        handleSubmit,
+        loading,
+        recipeList,
+        recipeDetailsData,
+     setrecipeDetailsData }}
+    >
       {children}
     </GlobalContext.Provider>
   );

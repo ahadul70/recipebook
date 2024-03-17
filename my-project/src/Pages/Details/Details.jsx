@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from "react";
+import { useParams } from "react-router-dom";
+import GlobalIndex, { GlobalContext } from "../../components/GlobalIndex";
 
 const Details = () => {
-  return (
-    <div>Details</div>
-  )
-}
+  const params = useParams();
+  console.log(params);
+  const { recipeDetailsData, setrecipeDetailsData } = useContext(GlobalContext);
+  return <div>Details</div>;
+};
 
-export default Details
+export default Details;
